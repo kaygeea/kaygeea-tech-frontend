@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { kaygeeaLogoLight } from '../../assets/images/imageData';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { Profile } from '../interfaces/profile';
 import { Project } from '../interfaces/project';
@@ -13,14 +12,15 @@ import { TitleCasePipe } from '@angular/common';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements OnInit{
-  kaygeeaLogoLight = kaygeeaLogoLight;
-  @Input({required: true}) public navProfile!: Profile;
+  @Input({required: true}) public navProfile!: Profile["data"];
+  kaygeeaLogoLight!: string;
   protected projects!: Project[]
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.projects = this.navProfile.projects
+    this.projects = this.navProfile.projects;
+    this.kaygeeaLogoLight = this.navProfile.last_name;
   }
 
   // navigateToProject(projectName: string) {

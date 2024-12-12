@@ -11,7 +11,7 @@ import { FooterComponent } from '../footer/footer.component';
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent implements OnInit {
-  @Input({required: true}) public profile!: Profile;
+  @Input({required: true}) public profile!: Profile["data"];
 
   ngOnInit(): void {}
 }
