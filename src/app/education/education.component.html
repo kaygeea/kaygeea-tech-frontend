@@ -1,0 +1,20 @@
+@if (education) {    
+    <div class="flex flex-col px-8 py-8 mx-auto my-auto place-content-around gap-y-4 bg-purple-950">
+        <header class="text-3xl lg:text-4xl xl:text-5xl font-bold text-center text-purple-200">
+            <h1>EDUCATION</h1>
+        </header>
+        <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"> 
+            @for (edu of education; track $index) {
+                <div class="text-purple-200">
+                    <h2 class="italic text-lg font-bold"> <a [href]="edu.link">{{ edu.certificate }}</a> </h2>
+                    <h3 class="text-base font-bold"> {{ edu.institution }}<br> {{ edu.location }} </h3>
+                    <h4 class="italic text-sm tracking-wide"> {{ edu.completion_date | date : 'MMM, yyyy'}} </h4>
+                    <h5 class="text-sm"> {{ edu.level }} </h5>
+                    <!-- @if (edu.final_project) {
+                        <p class="italic text-sm"> <a [href]="edu.link"> {{ edu.final_project }} </a> </p>
+                    } -->
+                </div>
+            }
+        </section>
+    </div>
+}
