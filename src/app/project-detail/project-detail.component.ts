@@ -21,7 +21,7 @@ export class ProjectDetailComponent implements OnInit {
   private route: ActivatedRoute = inject(ActivatedRoute);
   @Input() public projects!: Project[];
   protected project!: Project;
-  protected projectDetail!: ProjectDetail
+  protected projectDetail!: ProjectDetail["data"]
   protected projectDetailScope!: ProjectDetailContent[];
   protected demoType = DemoType;
   public projectName!: string | null;
@@ -37,8 +37,10 @@ export class ProjectDetailComponent implements OnInit {
       this.project = this.projectDetailService.populateProject(this.projectName, this.projects);
       this.projectDetailService.fetchProjectDetails(this.projectName, this.project.details_id)
       .subscribe(projectDetails => {
-        this.projectDetail = projectDetails;
-        this.projectDetailScope = this.parseProjectScope(projectDetails, param.get("projectScope"));
+        console.log("projectDetails from ProjectDetailComponent", projectDetails);
+        this.projectDetail = projectDetails.data;
+        this.projectDetailScope = this.parseProjectScope(projectDetails.data, param.get("projectScope"));
+        console.log("ProjectDetailScope from ProjectDetailComponent", this.projectDetailScope);
         this.sectionTitles = this.dataService.groupProjectDetailsSectionTitles(this.projectDetailScope)
         console.log("Content Parts from project detail component", this.project);
         }
@@ -46,7 +48,7 @@ export class ProjectDetailComponent implements OnInit {
     });
   }
 
-  parseProjectScope(projectDetails: ProjectDetail, scopeKeyword: string | null) : ProjectDetailContent[] {
-    return projectDetails?.[scopeKeyword as keyof Pick<ProjectDetail, 'why'  | 'how'>];
+  parseProjectScope(projectDetails: ProjectDetail["data"], scopeKeyword: string | null) : ProjectDetailContent[] {
+    return projectDetails?.[scopeKeyword as keyof Pick<ProjectDetail["data"], 'why'  | 'how'>];
   }
 }

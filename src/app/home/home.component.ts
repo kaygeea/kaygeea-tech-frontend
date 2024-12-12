@@ -17,7 +17,7 @@ import { FooterComponent } from '../footer/footer.component';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
-  @Input({required: true}) public homeProfile!: Profile;
+  @Input({required: true}) public homeProfile!: Profile["data"];
 
   ngOnInit(): void {
     initFlowbite();

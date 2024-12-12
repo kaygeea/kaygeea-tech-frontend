@@ -16,7 +16,7 @@ import { TitleCasePipe } from '@angular/common';
   styleUrl: './projects-nav.component.css'
 })
 export class ProjectsNavComponent implements OnInit {
-  @Input() public profile!: Profile;
+  @Input() public profile!: Profile["data"];
   protected projects!: Project[];
 
   ngOnInit(): void {

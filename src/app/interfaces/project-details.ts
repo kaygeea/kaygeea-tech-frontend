@@ -1,11 +1,13 @@
 import { DemoType } from "./enums/demo-type";
 
 export interface ProjectDetail {
-    id: Object;
-    profile_id?: string;
-    name: string;
-    how: ProjectDetailContent[],
-    why: ProjectDetailContent[],
+    data: {
+        id: Object;
+        profile_id?: string;
+        name: string;
+        how: ProjectDetailContent[],
+        why: ProjectDetailContent[],
+        }
 }
 
 export interface ProjectDetailContent {

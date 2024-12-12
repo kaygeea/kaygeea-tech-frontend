@@ -12,14 +12,15 @@ import { TitleCasePipe } from '@angular/common';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements OnInit{
-  @Input({required: true}) public navProfile!: Profile;
-  kaygeeaLogoLight = this.navProfile.logo.light_mode;
+  @Input({required: true}) public navProfile!: Profile["data"];
+  kaygeeaLogoLight!: string;
   protected projects!: Project[]
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.projects = this.navProfile.projects
+    this.projects = this.navProfile.projects;
+    this.kaygeeaLogoLight = this.navProfile.last_name;
   }
 
   // navigateToProject(projectName: string) {

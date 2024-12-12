@@ -10,7 +10,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './about.component.css'
 })
 export class AboutComponent implements OnInit{
-  @Input({required: true}) profile!: Profile;
+  @Input({required: true}) profile!: Profile["data"];
 
   ngOnInit(): void {}
 }
