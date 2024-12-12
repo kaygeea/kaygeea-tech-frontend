@@ -1,0 +1,20 @@
+<h2 class="text-center w-full">TECHNICAL SKILLS & TOOLS</h2>
+<ol>
+    @for (technicalSkill of technicalSkills; track $index) {
+        <li> {{ technicalSkill.focus | titlecase }} | {{ technicalSkill.type | titlecase }} | {{ technicalSkill.detail }} </li>
+    }
+</ol>
+<!-- <ol [class.tree]="isTree">
+    <li class="parent" [class.parent]="isParent">
+        <p>Python</p>
+        <p>Details about Python skills</p>
+    </li>
+    <li class="parent" [class.parent]="isParent">
+        <p>JavaScritpt</p>
+        <p>Details about JavaScritpt skills</p>
+    </li>
+    <li class="parent" [class.parent]="isParent">
+        <p>Problem Solving</p>
+        <p>Because I built these knowledge to be able to map my mind to the basics and map a learning path for myself to be any kind of software engineer I want to be, in any field</p>
+    </li>
+</ol> -->
