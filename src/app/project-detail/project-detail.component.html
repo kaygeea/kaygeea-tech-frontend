@@ -1,0 +1,54 @@
+<div class="grid grid-cols-1 lg:grid-cols-4 xl:grid-cols-5 lg:gap-3 xl:gap-5 p-4 overflow-y-auto h-dvh w-full lg:justify-items-center text-purple-200">
+    <div class="overflow-y-auto lg:col-start-4 xl:col-start-5 col-span-1 bg-purple-200 lg:order-last">
+        <app-project-details-nav [sectionTitles]="sectionTitles" [projectName]="projectName" [projectScope]="projectScope" ></app-project-details-nav>
+    </div>
+    <div class="flex flex-col px-4 overflow-y-auto lg:col-span-3 xl:col-span-4 text-justify lg:p-8 xl:p-12 bg-purple-950">
+        @if (projectScope === "why") {
+            <h1 class="py-4 font-extrabold text-2xl lg:text-3xl xl:text-4xl text-center"> {{ project.title | uppercase}} </h1>
+            @if (project.demo_type == demoType.IMAGE || project.demo_type == demoType.GIF) {
+                <img [src]="project.demo" [alt]="'Demo for ' + project.name" class="aspect-video object-cover w-full h-96 md:h-auto md:w-auto pt-2 pb-4 lg:pb-6"/>
+            } @else if (project.demo_type == demoType.VIDEO) {
+                <video controls [src]="project.demo" class="aspect-video object-cover w-full h-96 md:h-auto md:w-auto pt-2 pb-4 lg:pb-6"></video>
+            }
+            <p>{{ project.description }}</p>
+        }
+        @for (projectDetailsScope of projectDetailScope; track $index) {
+            <section class="py-3 lg:py-5" [id]="projectDetailsScope.title">
+                <header class="py-2 font-medium text-lg lg:text-1xl xl:text-2xl">
+                    <h2> {{ projectDetailsScope.title | titlecase }} </h2>
+                </header>
+                @for (contentPart of projectDetailsScope.content_parts; track $index) {
+                    <p class="tracking-normal lg:tracking-wide"> {{ contentPart.main }} </p>
+                    @if (contentPart.list_items) {
+                        <ul class="list-disc list-inside">
+                            @for (listItem of contentPart.list_items; track $index) {
+                                <li class="py-1 lg:py-3"> @if (listItem.list_title) {
+                                    <span> {{ listItem.list_title }}: </span>
+                                    } {{ listItem.list_content }} </li>
+                            }
+                        </ul>
+                    }
+                    @if (contentPart.image) {
+                        <img [src]="contentPart.image.url" [alt]="contentPart.image.alt"/>
+                    }
+                    @if (contentPart.conclusion) {
+                        <p class="tracking-normal lg:tracking-wide"> {{ contentPart.conclusion }} </p>
+                    }
+                }
+            </section>           
+        }
+        @if (projectScope === "why") {
+            <p class="tracking-normal lg:tracking-wide">
+                Read about the {{ project.name | fromKebab | titlecase }} implementation <a
+                [routerLink]="['/projects', project.name, 'how']"
+                class="italic underline lg:no-underline lg:hover:underline decoration-current text-cab-sav-300 lg:text-purple-200 lg:hover:text-cab-sav-300">here</a>.
+            </p>
+        } @else if (projectScope === "how") {
+            <p class="tracking-normal lg:tracking-wide">
+                Read about my motivations for {{ project.name | fromKebab | titlecase }} <a
+                [routerLink]="['/projects', project.name, 'why']"
+                class="italic underline lg:no-underline lg:hover:underline decoration-current text-cab-sav-300 lg:text-purple-200 lg:hover:text-cab-sav-300">here</a>.
+            </p>
+        }
+    </div>
+</div>
