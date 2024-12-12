@@ -1,0 +1,28 @@
+  <!-- About section -->
+  @if (homeProfile) {
+    <section id="about" class="w-full">
+      <app-about [profile]="homeProfile"></app-about>
+    </section>
+  
+    <!-- Skills section -->
+    <section id="skills" class="w-full">
+      <app-skills [skills]="homeProfile.skills"></app-skills>
+    </section>
+  
+    <!-- Projects section -->
+    <section id="home-projects" class="w-full">
+      <app-home-page-project [projects]="homeProfile.projects" ></app-home-page-project>
+    </section>
+    
+    <!-- Education section -->
+    <section id="education" class="w-full">
+      <app-education [education]="homeProfile.education"></app-education>
+    </section>
+  
+    <!-- Contact Me section -->
+    <section id="contact" class="w-full">
+      <app-contact-me [contactDetails]="homeProfile.contacts"></app-contact-me>
+    </section>
+
+    <app-footer [footerLogo]="homeProfile.logo"></app-footer>
+  }
