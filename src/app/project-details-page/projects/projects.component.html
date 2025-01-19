@@ -1,0 +1,14 @@
+@if (profile) {
+    <app-navbar [navProfile]="profile"></app-navbar>
+    <div class="min-h-screen mx-auto bg-purple-950">
+        <app-projects-nav [profile]="profile"></app-projects-nav>
+    </div>
+}
+    
+
+
+<!-- 
+<div class="inline-flex flex-row max-w-screen-2xl mx-4 sm:mx-6 2xl:mx-auto">
+    <app-projects-nav [projects]="profile.projects"></app-projects-nav>
+    <router-outlet (activate)="assignProjectData($event)"></router-outlet>
+</div> -->

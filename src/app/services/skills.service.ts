@@ -20,7 +20,7 @@ export class SkillsService {
       // Step 3: Aggregate grouped arrays into a single object
       reduce((acc, groupedSkills) => {
         const groupKey = groupedSkills[0][key];
-        acc[groupKey] = groupedSkills;
+        acc[groupKey as string] = groupedSkills;
         return acc;
       }, {} as { [key: string]: Skill[] }) // Initial empty object
     );

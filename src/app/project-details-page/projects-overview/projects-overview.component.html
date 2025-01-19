@@ -1,0 +1,12 @@
+<div class="p-3 lg:pr-6 xl:pr-9 text-purple-300">
+    <div>
+        <h1 class="text-center text-xl md:text-4xl py-6">PROJECTS OVERVIEW</h1>
+        @for (project of projects; track $index) {
+            <a class="lg:no-underline lg:hover:underline decoration-current text-cab-sav-300 lg:text-purple-200 lg:hover:text-cab-sav-300" [routerLink]="['/projects', project.name, 'how']">
+                <h2 class="text-lg md:text-2xl pb-2 md:pb-4"> {{ project.name }} </h2>
+            </a>
+            <p class="md:text-justify"> {{ project.abstract.intro }} </p><br>
+            <p class="md:text-justify"> {{ project.abstract.conclusion }} </p><br>
+        }
+    </div>
+</div>

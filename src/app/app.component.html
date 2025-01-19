@@ -1,8 +1,4 @@
-@if (profile) {
-  <app-navbar [navProfile]="profile"></app-navbar>
-}
-
-
+<!-- <app-navbar [navProfile]="profile"></app-navbar> -->
 <main class="
 min-h-screen
 min-w-full
@@ -10,12 +6,5 @@ mx-auto
 dark:bg-purple-950
 text-purple-text-900
 dark:text-purple-200">
-  @if (profile) {
-    <router-outlet (activate)="assignData($event)"></router-outlet>
-  }
+  <router-outlet/>
 </main>
-
-<!-- @if (profile) {
-  <app-footer [footerLogo]="profile.logo"></app-footer>
-} -->
-

@@ -4,6 +4,7 @@ import { routes } from './app.routes';
 import { TitleStrategyService } from './core/routing/title-strategy.service';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { loggingInterceptor } from './utils/interceptors';
+import { provideCloudinaryLoader } from '@angular/common';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,7 +22,8 @@ export const appConfig: ApplicationConfig = {
       useClass: TitleStrategyService
     },
     provideHttpClient(
-      withInterceptors([loggingInterceptor])
+      //withInterceptors([loggingInterceptor])
     ),
+    provideCloudinaryLoader(`https://res.cloudinary.com`)
   ]
 };

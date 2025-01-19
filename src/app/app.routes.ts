@@ -1,8 +1,8 @@
 import { Routes, ExtraOptions, RouterFeature } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { ProjectDetailComponent } from './project-detail/project-detail.component';
-import { ProjectsOverviewComponent } from './projects-overview/projects-overview.component';
+import { HomeComponent } from './home-page/home/home.component';
+import { ProjectsComponent } from './project-details-page/projects/projects.component';
+import { ProjectDetailComponent } from './project-details-page/project-detail/project-detail.component';
+import { ProjectsOverviewComponent } from './project-details-page/projects-overview/projects-overview.component';
 
 // const resolvedNameTitle: ResolveFn<string> = () => Promise.resolve(inject(ProjectDetailService));
 export const routes: Routes = [
@@ -12,7 +12,7 @@ export const routes: Routes = [
         pathMatch: 'full',
     },
     {
-        title: 'Full Stack Web Developer & SE',
+        title: 'Software Engineer',
         path: 'home',
         component: HomeComponent,
     },
@@ -27,7 +27,6 @@ export const routes: Routes = [
         component: HomeComponent,
     },
     {
-        // title: 'Projects',
         path: 'home-projects',
         component: HomeComponent,
     },

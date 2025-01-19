@@ -4,4 +4,5 @@ export interface ContactDetail {
     github: string,
     s_o: string,
     instagram: string,
+    substack: string,
 }

@@ -1,0 +1,19 @@
+<aside class="h-full bg-purple-950 text-purple-300 pt-2 lg:pt-4 xl:pt-6 pb-12 lg:pb-0 text-sm">
+    <nav>
+        <header>ON THIS PAGE</header>
+        <ul class="list-disc list-inside">
+            @for (title of sectionTitles; track $index) {
+                <li class="py-1 lg:py-3">
+                    <button (click)="navigateToSection($event)">
+                        <a
+                        [routerLink]="['/projects', projectName, projectScope]"
+                        routerLinkActive="activebutton"
+                        [fragment]="title.replaceAll(' ', '-').toLowerCase()">
+                            {{ title | titlecase }}
+                        </a>
+                    </button>
+                </li>
+            }
+        </ul>
+    </nav>
+</aside>

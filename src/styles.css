@@ -2,3 +2,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Bona Nova SC';
+    src: url('assets/fonts/Bona_Nova_SC/BonaNovaSC-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bona Nova SC';
+    src: url('assets/fonts/Bona_Nova_SC/BonaNovaSC-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bona Nova SC';
+    src: url('assets/fonts/Bona_Nova_SC/BonaNovaSC-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Noto Sans Mono';
+    src: url('assets/fonts/Noto_Sans_Mono/static/NotoSansMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans Mono';
+    src: url('assets/fonts/Noto_Sans_Mono/static/NotoSansMono-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans Mono';
+    src: url('assets/fonts/Noto_Sans_Mono/static/NotoSansMono-ExtraBold.ttf') format('truetype');
+    font-weight: bolder;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans Mono';
+    src: url('assets/fonts/Noto_Sans_Mono/static/NotoSansMono-Light.ttf') format('truetype');
+    font-weight: lighter;
+    font-style: normal;
+}

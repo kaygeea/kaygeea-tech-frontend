@@ -1,0 +1,18 @@
+<hr>
+<div class="flex flex-col px-4 py-8 mx-auto gap-1 lg:gap-3 xl:gap-5 xl:px-24 items-center bg-purple-950 dark:bg-purple-950 dark:text-purple-200">
+    <div class="text-3xl lg:text-4xl xl:text-5xl font-bold text-purple-200">
+        <h1>SKILLS</h1>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-lg lg:text-xl xl:text-2xl text-purple-200">
+        @if (groupedSkills) {
+            <div class="w-full">
+                <app-tech-skills [technicalSkills]="technicalSkills"></app-tech-skills>
+            </div>
+            <div class="w-full">
+                <app-soft-skills [softSkills]="softSkills"></app-soft-skills>
+            </div>  
+        }        
+    </div>
+</div>
+<hr>
+

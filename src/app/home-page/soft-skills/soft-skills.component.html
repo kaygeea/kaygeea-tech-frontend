@@ -1,0 +1,8 @@
+<h2 class="text-center w-full">SOFT SKILLS</h2>
+<ul class="list-decimal list-inside">
+    @for (softskill of softSkills; track $index) {
+        <li class="pb-2 lg:pb-2">
+            {{ softskill.detail }}
+        </li>
+    }
+</ul>

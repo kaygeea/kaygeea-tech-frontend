@@ -1,0 +1,39 @@
+<div class="grid grid-cols-1 lg:grid-cols-5 xl:grid-cols-6 min-h-full gap-2 lg:justify-items-stretch">
+    @if (projects) {
+        <nav class="h-full col-span-1 pt-6 lg:pt-4 xl:pt-6 px-4 xl:justify-self-center bg-purple-950 text-sm text-purple-300">
+            <header>
+                <h1 class="font-semibold">PROJECTS</h1>
+            </header>
+            @for (project of projects; track $index) {
+                <details name="project">
+                    <summary>
+                        <h2> {{ project.name | fromKebab | titlecase }} </h2>
+                    </summary>
+                    <ul class="list-outside">
+                        <li class="py-1 lg:py-2">
+                            <a [routerLink]="['/projects', project.name, 'why']">Why</a>
+                        </li>
+                        <li class="py-1 lg:py-3">
+                            <a [routerLink]="['/projects', project.name, 'how']">How</a>
+                        </li>
+                        <li class="py-1 lg:py-3">
+                            <a [href]="project.link" target="_blank"> Try {{ project.name }} </a>
+                        </li>
+                        <li class="py-1 lg:py-3">
+                            <a [href]="project.codebase" target="_blank"> Inspect the codebase </a>
+                        </li>
+                        @if (project.focus === projectFocus.FULLSTACK) {
+                            <li class="py-1 lg:py-3">
+                                <a [href]="project.codebase_fe" target="_blank"> Inspect the FE codebase </a>
+                            </li>
+                        }
+
+                    </ul>
+                </details>
+            }
+        </nav>
+        <div class="lg:col-span-4 xl:col-span-5">
+            <router-outlet (activate)="assignProjectData($event)"/>
+        </div>
+    }
+</div>
