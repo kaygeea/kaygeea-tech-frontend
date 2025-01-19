@@ -1,0 +1,30 @@
+details {
+  padding: 10px;
+}
+
+summary {
+  list-style-position: outside;
+  margin-left: 15px;
+  padding: 5px 5px 5px 10px;
+  border-radius: 5px;
+}
+
+summary::marker {
+  color: #ffccdb;
+  font-size: 1.2em;
+}
+
+h1 {
+  font-family: 'Bona Nova SC';
+  font-weight: bold;
+}
+
+h2 {
+  font-family: 'Noto Sans Mono';
+  font-weight: bold;
+}
+
+li {
+  font-size: 'Noto Sans Mono';
+  font-weight: lighter;
+}

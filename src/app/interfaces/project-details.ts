@@ -12,7 +12,7 @@ export interface ProjectDetail {
 
 export interface ProjectDetailContent {
     title: string;
-    content_parts: ContentPart[];
+    content_parts: ContentParts[];
     position: Number;
     gains?: string[];
     links?: { [source: string]: string }[];
@@ -20,11 +20,14 @@ export interface ProjectDetailContent {
     features?: string[];
 }
 
-export interface ContentPart {
-    main: string;
+export interface ContentParts {
     image?: ProjectDetailMedia;
-    conclusion?: string;
+    intro: string;
+    main_one?: string;
+    main_two?: string;
+    conclusion: string;
     list_items?: ListItem[];
+    link?: string;
 }
 
 export interface ListItem {

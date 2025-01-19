@@ -1,0 +1,8 @@
+p, div #about-text {
+    font-family: "Noto Sans Mono";
+    font-weight: bold;
+}
+
+h1, button {
+    font-family: "Bona Nova SC";
+}

@@ -1,0 +1,17 @@
+h1 {
+    font-family: "Bona Nova SC";
+}
+
+h2 {
+    font-family: 'Noto Sans Mono';
+    font-weight: bold;
+}
+h3, h4, h5 {
+    font-family: 'Noto Sans Mono';
+    font-weight: normal;
+}
+
+h5 {
+    font-family: 'Noto Sans Mono';
+    font-weight: lighter;
+}

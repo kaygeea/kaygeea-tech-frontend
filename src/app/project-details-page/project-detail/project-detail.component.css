@@ -1,0 +1,8 @@
+h1, h2 {
+    font-family: "Bona Nova SC";
+    font-weight: bold;
+}
+
+p, ul {
+    font-family: "Noto Sans Mono";
+}

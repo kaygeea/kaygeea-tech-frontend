@@ -1,0 +1,18 @@
+h1, h4 {
+    font-family: 'Bona Nova SC';
+}
+
+div #technologies {
+    font-family: 'Noto Sans Mono';
+    font-weight: bold;
+}
+
+div #project-details {
+    font-family: 'Noto Sans Mono';
+    font-weight: normal;
+}
+
+div #project-link {
+    font-family: 'Noto Sans Mono';
+    font-weight: lighter;
+}
