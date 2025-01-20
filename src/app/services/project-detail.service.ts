@@ -11,7 +11,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class ProjectDetailService {
-  protected pd_url = environment.projectDetailApiUrl;
+  protected pd_url = environment.railwayProjectDetailApiUrl;
 
   constructor(
     private readonly http: HttpClient,

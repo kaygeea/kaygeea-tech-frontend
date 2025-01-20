@@ -40,9 +40,15 @@
         </div>
     </div>
     <div id="about-text" class="grid grid-cols-1 md:grid-cols-10 xl:grid-cols-12">
-        <p class="md:col-start-1 md:col-span-10 xl:col-start-2 xl:col-span-10 basis-auto w-full mb-6 text-justify text-sm lg:mb-8 md:text-lg lg:text-xl text-purple-700 dark:text-purple-100">
-           {{ profile.about }} 
-        </p>   
+        <p class="md:col-start-1 md:col-span-10 xl:col-start-2 xl:col-span-10 basis-auto w-full mb-6 text-justify text-xs lg:mb-8 md:text-sm lg:text-base leading-loose tracking-normal text-purple-700 dark:text-purple-100">
+           {{ profile.about.intro }}<br>
+
+           {{ profile.about.main_one }}<br>
+
+           {{ profile.about.main_two }}<br>
+           
+           {{ profile.about.conclusion }} 
+        </p>
     </div>
     <!-- <div class="flex flex-row plax">
         <p class="basis-auto w-full mb-6 font-light font-mono text-justify text-sm lg:mb-8 md:text-lg lg:text-xl text-purple-700 dark:text-purple-100">{{ profile.about }}</p>

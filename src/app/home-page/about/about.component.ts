@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
+import { Component, Input} from '@angular/core';
 import { Profile } from '../../interfaces/profile';
 import { RouterLink } from '@angular/router';
 
@@ -12,8 +11,4 @@ import { RouterLink } from '@angular/router';
 })
 export class AboutComponent {
   @Input({required: true}) profile!: Profile["data"];
-
-  clearStorage() {
-    localStorage.clear()
-  }
 }
