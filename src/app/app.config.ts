@@ -22,7 +22,7 @@ export const appConfig: ApplicationConfig = {
       useClass: TitleStrategyService
     },
     provideHttpClient(
-      //withInterceptors([loggingInterceptor])
+      // withInterceptors([loggingInterceptor])
     ),
     provideCloudinaryLoader(`https://res.cloudinary.com`)
   ]
