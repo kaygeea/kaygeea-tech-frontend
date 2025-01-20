@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class ProfileService {
-  private readonly _url = environment.apiUrl;
+  private readonly _url = environment.railwayApiUrl;
   profile!: Profile;
   
   constructor(
